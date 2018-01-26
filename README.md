@@ -15,7 +15,8 @@
 ```js
 /*
 Strategy: Find the first wall, and continue to iterate until hitting a wall
-that is Taller than the first. Then take the area between the two walls, and calculate the difference between the total area between and the walls that occupy the cavity.
+that is Taller than the first. Then take the area between the two walls, 
+and calculate the difference between the total area between and the walls that occupy the cavity.
 
 Case Study:
 [5, 3, 7, 4]
