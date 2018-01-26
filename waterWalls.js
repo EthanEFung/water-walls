@@ -8,7 +8,10 @@ function waterWalls(walls) {
       firstWallIdx = i;
     } else {
       secondWallIdx = searchFor2ndWallIdx(walls, firstWallIdx);
-      if (secondWallIdx === null) return largestCavity;
+      if (secondWallIdx === null) {
+        secondWallIdx = searchFor2ndWallIdxReverse(walls, firstWallIdx);
+        if (secondWallIdx === null) return largestCavity;
+      }
       const cavity = findCavityArea(walls, firstWallIdx, secondWallIdx);
       largestCavity = findLargestCavity(largestCavity, cavity);
 
@@ -25,6 +28,22 @@ function searchFor2ndWallIdx(walls, firstWallIdx) {
     if (walls[i] >= firstWall) return i;
   }
   return null;
+}
+
+function searchFor2ndWallIdxReverse(walls, firstWallIdx) {
+  const firstWall = walls[firstWallIdx];
+  let secondWallIdx = walls.length - 1;
+  let secondWall = walls[secondWallIdx];
+
+
+  for (let i = secondWallIdx; i > firstWallIdx; i--) {
+    if (walls[i] >= walls[secondWallIdx]) {
+      secondWallIdx = i;
+      secondWall = walls[i];
+    }
+  }
+  if (secondWallIdx === firstWallIdx + 1) return null;
+  return secondWallIdx;
 }
 
 // Returns the number of droplets that occupy the cavity
@@ -68,6 +87,5 @@ function findLargestCavity(largestCavity, currCavity) {
 //     start the iteration at 1 less than the idx of the second wall
 // }
 
-console.log(waterWalls([5, 3, 7, 2, 6, 4, 5, 9, 1, 2])) //[3, 8, 11]
 
 module.exports = { waterWalls, searchFor2ndWallIdx, findCavityArea, findLargestCavity }
