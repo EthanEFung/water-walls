@@ -36,15 +36,15 @@ Case Study:
   Find area of the cavity:
     [5, 3, 7, 4]
      ^     ^
-    find the # of x:
+    find the width of the cavity
     position of 5 is 1
     position of 7 is 3
     2 degree of seperation therefore x = 1
 
-    find the # of y:
+    find the height of the cavity
     height 5 is less than 7 therefore y = 5
 
-    find the area of x and y axis
+    find the area of the cavity
     1 * 5 = 5
 
     find the area that is occupied with walls: 3
