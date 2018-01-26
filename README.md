@@ -26,7 +26,7 @@ Case Study:
 [5, 3, 7, 4]
  ^  ^
 1st wall height: 5
-2nd wall height: 3 -> 3 is less than 5 -> do not assign
+2nd wall height: 3 -> 3 is less than 5 -> search for second wall
 
 [5, 3, 7, 4]
  ^     ^
@@ -63,8 +63,9 @@ area of blocks of water = 2
 [5, 3, 7, 4]
        ^  ^
 1st wall height: 7
-2nd wall height: 4 -> 4 is less than 7 -> do not assign
+2nd wall height: 4 -> 4 is less than 7 -> search for second wall..
 
+iteration is done,
 return largest area of trapped water
 */
 ```
