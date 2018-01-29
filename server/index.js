@@ -12,6 +12,7 @@ const router = require('./routes/master');
 app
   .use(urlencoded({ extended: true }))
   .use(json())
+  .use(express.static(path.resolve('client', 'public')))
   .use(router)
 
 app.listen(port, err => {
